@@ -1,10 +1,7 @@
-'use strict'
-
 const { isBefore, parseISO, subHours } = require('date-fns');
 
 /** @type {typeof import('@adonisjs/lucid/src/Lucid/Model')} */
 const Token = use('App/Models/Token');
-
 
 class ResetPasswordController {
   async store({ request, response }) {
@@ -25,4 +22,4 @@ class ResetPasswordController {
     await user.save();
   }
 }
-module.exports = ResetPasswordController
+module.exports = ResetPasswordController;
