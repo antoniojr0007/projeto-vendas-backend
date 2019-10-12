@@ -23,6 +23,8 @@ Factory.blueprint('App/Models/User', (faker, i, data = {}) => {
     // O codigo de vendedor esta sendo representado pelo Google Analytics fiquiticio.
     sellerCode: faker.google_analytics(),
     password: faker.string(),
+    role: faker.integer({ min: 1, max: 4 }),
+    status: faker.integer({ min: 1, max: 2 }),
     ...data,
   };
 });
