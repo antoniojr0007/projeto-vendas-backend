@@ -1,7 +1,8 @@
+/** @type {typeof import('@adonisjs/lucid/src/Lucid/Model')} */
 const User = use('App/Models/User');
 
 class UserController {
-  async create({ request }) {
+  async store({ request, response }) {
     const data = request.only([
       'name',
       'rg',
@@ -10,11 +11,12 @@ class UserController {
       'sellerCode',
       'email',
       'password',
+      'role',
+      'status',
     ]);
 
     const user = await User.create(data);
-
-    return user;
+    return response.status(201).json(user);
   }
 }
 

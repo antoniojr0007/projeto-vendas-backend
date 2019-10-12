@@ -16,6 +16,12 @@ Factory.blueprint('App/Models/User', (faker, i, data = {}) => {
   return {
     name: faker.name(),
     email: faker.email(),
+    // O numero do rg esta sendo representado pelo número de seguro social fiquiticio.
+    rg: faker.ssn(),
+    cpf: faker.cpf(),
+    birthDate: faker.birthday({ string: true }),
+    // O codigo de vendedor esta sendo representado pelo Google Analytics fiquiticio.
+    sellerCode: faker.google_analytics(),
     password: faker.string(),
     ...data,
   };
