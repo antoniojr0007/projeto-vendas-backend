@@ -29,6 +29,20 @@ class UserSchema extends Schema {
       table.enu('role', ['1', '2', '3', '4']).default('3');
       // Status '0 = Bloqueado','1 = Ativo'
       table.enu('status', ['1', '2']).default('2');
+      table
+        .integer('contact_id')
+        .unsigned()
+        .references('id')
+        .inTable('contacts')
+        .onUpdate('CASCADE')
+        .onDelete('CASCADE');
+      table
+        .integer('address_id')
+        .unsigned()
+        .references('id')
+        .inTable('addresses')
+        .onUpdate('CASCADE')
+        .onDelete('CASCADE');
       table.timestamps();
     });
   }

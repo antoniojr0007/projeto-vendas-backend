@@ -31,4 +31,25 @@ Route.group(() => {
 
   // Profile
   Route.put('/profile', 'ProfileController.update').validator('Profile');
+
+  // Contact
+  Route.get('/contact', 'ContactController.index');
+  Route.get('/contact/:id', 'ContactController.show');
+  Route.post('/contact', 'ContactController.store');
+  Route.put('/contact/:id', 'ContactController.update');
+  Route.delete('/contact/:id', 'ContactController.destroy');
+
+  // Address
+  Route.get('/address', 'AddressController.index');
+  Route.get('/address/:id', 'AddressController.show');
+  Route.post('/address', 'AddressController.store');
+  Route.put('/address/:id', 'AddressController.update');
+  Route.delete('/address/:id', 'AddressController.destroy');
+
+  // Store
+  Route.get('/store', 'StoreController.index');
+  Route.get('/store/:id', 'StoreController.show');
+  Route.post('/store', 'StoreController.store');
+  Route.put('/store/:id', 'StoreController.update');
+  Route.delete('/store/:id', 'StoreController.destroy');
 }).middleware('auth');

@@ -23,6 +23,8 @@ class UserController {
       'password',
       'role',
       'status',
+      'contact_id',
+      'address_id',
     ]);
 
     const user = await User.create(data);
@@ -40,6 +42,8 @@ class UserController {
       'email',
       'role',
       'status',
+      'contact_id',
+      'address_id',
     ]);
 
     user.merge(data);

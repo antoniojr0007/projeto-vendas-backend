@@ -24,6 +24,14 @@ class User extends Model {
     return this.hasMany('App/Models/Token');
   }
 
+  contact() {
+    return this.hasMany('App/Models/Contact');
+  }
+
+  address() {
+    return this.hasMany('App/Models/Address');
+  }
+
   getAvatarUrl({ avatar }) {
     return `${Env.get('APP_URL')}/files/${avatar}`;
   }

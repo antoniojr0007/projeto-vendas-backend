@@ -11,6 +11,8 @@ class ProfileController {
       'email',
       'role',
       'status',
+      'contact_id',
+      'address_id',
     ]);
 
     const user = await auth.getUser();
