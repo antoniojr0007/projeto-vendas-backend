@@ -33,11 +33,11 @@ Route.group(() => {
   Route.put('/profile', 'ProfileController.update').validator('Profile');
 
   // Contact
-  Route.get('/contact', 'ContactController.index');
-  Route.get('/contact/:id', 'ContactController.show');
-  Route.post('/contact', 'ContactController.store');
-  Route.put('/contact/:id', 'ContactController.update');
-  Route.delete('/contact/:id', 'ContactController.destroy');
+  Route.get('/contacts', 'ContactController.index');
+  Route.get('/contacts/:id', 'ContactController.show');
+  Route.post('/contacts', 'ContactController.store');
+  Route.put('/contacts/:id', 'ContactController.update');
+  Route.delete('/contacts/:id', 'ContactController.destroy');
 
   // Address
   Route.get('/address', 'AddressController.index');

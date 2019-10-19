@@ -16,7 +16,8 @@ test('it should return contact created', async ({ assert, client }) => {
   await Factory.model('App/Models/Contact').create(contactPayload);
 
   const response = await client
-    .post('/contact')
+    .post('/contacts')
+    .loginVia(user, 'jwt')
     .send(contactPayload)
     .end();
 

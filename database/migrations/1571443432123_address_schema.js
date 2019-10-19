@@ -15,6 +15,20 @@ class AddressSchema extends Schema {
       table.string('state').notNullable();
       table.string('country').notNullable();
       table.string('type').notNullable();
+      table
+        .integer('user_id')
+        .unsigned()
+        .references('id')
+        .inTable('users')
+        .onUpdate('CASCADE')
+        .onDelete('CASCADE');
+      table
+        .integer('store_id')
+        .unsigned()
+        .references('id')
+        .inTable('stores')
+        .onUpdate('CASCADE')
+        .onDelete('CASCADE');
       table.timestamps();
     });
   }

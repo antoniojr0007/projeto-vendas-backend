@@ -9,6 +9,20 @@ class ContactSchema extends Schema {
       table.string('contact').notNullable();
       table.string('type').notNullable();
       table.string('title');
+      table
+        .integer('user_id')
+        .unsigned()
+        .references('id')
+        .inTable('users')
+        .onUpdate('CASCADE')
+        .onDelete('CASCADE');
+      table
+        .integer('store_id')
+        .unsigned()
+        .references('id')
+        .inTable('stores')
+        .onUpdate('CASCADE')
+        .onDelete('CASCADE');
       table.timestamps();
     });
   }
